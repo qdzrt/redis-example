@@ -144,7 +144,6 @@
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, rbenv: 2.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.5, rbenv: 2.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, rbenv: 2.2.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="vegas (v0.1.11, rbenv: 2.2.2) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

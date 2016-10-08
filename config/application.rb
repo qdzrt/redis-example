@@ -19,6 +19,10 @@ module RedisExample
       g.test_framework = false
     end
 
-    config.cache_store = :redis_store, {host: '127.0.0.1', port: 6379, namespace: "rails365"}
+    # Custom directories with classes and modules you want to autoloadable.
+    config.autoload_paths.push(*%W(#{config.root}/lib))
+
+    # config.cache_store = :redis_store, {host: '127.0.0.1', port: 6379, namespace: "cache"}
+    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
   end
 end

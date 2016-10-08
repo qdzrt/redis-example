@@ -1,10 +1,12 @@
 class ArticlesController < ApplicationController
+  include ArticlesHelper
+
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @articles = Article.all
+    @articles = fetch_articles
     respond_with(@articles)
   end
 
@@ -35,6 +37,8 @@ class ArticlesController < ApplicationController
     @article.destroy
     respond_with(@article)
   end
+
+
 
   private
     def set_article

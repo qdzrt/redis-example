@@ -1,8 +1,7 @@
 class Article < ApplicationRecord
-  after_save :load_into_soulmate
+  after_save :clear_cache
 
-  def load_into_soulmate
-    loader = Soulmate::Loader.new('article')
-    loader.add('id': id, 'term': title)
+  def clear_cache
+    $redis.del 'articles'
   end
 end
