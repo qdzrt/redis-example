@@ -15,4 +15,4 @@ Article.create([
     { title: 'rails', content: 'rails test', articles_count: 0 },
     { title: 'can you', content: 'can you test', articles_count: 0 },
     { title: 'see you', content: 'see you test', articles_count: 0 }
-               ])
+ ])
