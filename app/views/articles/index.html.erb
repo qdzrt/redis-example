@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Articles</h1>
+<%= text_field_tag 'auto-title', nil, class: 'selector'%>
 
 <table>
   <thead>
@@ -27,7 +28,6 @@
 </table>
 
 
-<%= text_field_tag 'auto-title', nil, class: 'selector', autocomplete: true %>
 <br>
 
 <%= link_to 'New Article', new_article_path %>

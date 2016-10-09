@@ -3,8 +3,6 @@ class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
     @articles = fetch_articles
     respond_with(@articles)
@@ -38,7 +36,10 @@ class ArticlesController < ApplicationController
     respond_with(@article)
   end
 
-
+  def search
+    @titles = fetch_articles.map { |ob| ob['title'] }
+    render json: @titles
+  end
 
   private
     def set_article
