@@ -7,7 +7,7 @@
   $('.selector').autocomplete
     source: (request, response) ->
       matcher = new RegExp( '^' + $.ui.autocomplete.escapeRegex(request.term), 'i' )
-      response( $.grep( window.titles, (item) ->
+      response( $.grep( titles, (item) ->
         return matcher.test item
       ))
     minLength: 1
