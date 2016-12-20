@@ -1,10 +1,9 @@
 class ArticlesController < ApplicationController
-  include ArticlesHelper
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = fetch_articles
+    @articles = Article.fetch_articles
   end
 
   def show
@@ -28,6 +27,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+    redirect_to articles_path
   end
 
   private
