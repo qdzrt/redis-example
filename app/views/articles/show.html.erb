@@ -1,6 +1,7 @@
 <% content_for :title, 'Redis article:show' %>
 <p id="notice"><%= notice %></p>
 
+<p>浏览量：<%= @times %></p>
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -9,11 +10,6 @@
 <p>
   <strong>Content:</strong>
   <%= @article.content %>
-</p>
-
-<p>
-  <strong>Articels count:</strong>
-  <%= @article.articles_count %>
 </p>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

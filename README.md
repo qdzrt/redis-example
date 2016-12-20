@@ -8,4 +8,4 @@ This Demo includes two functions:
 
 * autocomplete
 
-* hottest article list, the first six articles
+* Top four popular article list based on redis cache, Not in database articles_count field 

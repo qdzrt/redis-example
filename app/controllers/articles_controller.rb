@@ -3,10 +3,18 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.fetch_articles
+    if params[:hot].present?
+      @articles = Article.where(id: Article.hottest_articles_ids)
+    else
+      @articles = Article.fetch_articles
+    end
+  end
+
+  def hot
   end
 
   def show
+    @times = @article.update_read_times
   end
 
   def new

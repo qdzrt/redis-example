@@ -1,6 +1,7 @@
 @loadArticles = ->
   $.get '/ajax/articles/search', (data) ->
     window.titles = data
+  ,'json'
   searchTitle()
 
 @searchTitle = ->
@@ -12,9 +13,7 @@
       ))
     minLength: 1
 
-
 $(document).on 'turbolinks:load', ->
 
   if $('.selector').length > 0
     loadArticles()
-

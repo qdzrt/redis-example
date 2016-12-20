@@ -7,4 +7,8 @@ class Article < ApplicationRecord
   def clear_cache
     $redis.del 'articles'
   end
+
+  def current_date
+    Time.zone.now
+  end
 end
