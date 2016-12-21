@@ -10,9 +10,6 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def hot
-  end
-
   def show
     @times = @article.update_read_times
   end

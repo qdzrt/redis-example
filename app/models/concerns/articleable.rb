@@ -24,6 +24,8 @@ module Articleable
     end
 
     # use redis sorted set to filter out the first six articles of ids
+    # how to use pipelined to batch write
+    # $redis.pipelined
     def hottest_articles_ids
       key = 'hot-articles'
       Article.all.each do |article|
@@ -48,16 +50,7 @@ module Articleable
     end
 
     def article_read_times
-      num = $redis.get article_key
-      num.nil?? 0 : num
-    end
-
-    def clean_redis_cache
-      $redis.del 'hot-articles'
-
-      Article.all.each do |article|
-        $redis.del article.article_key
-      end
+      ($redis.get article_key) || 0
     end
 
   end # InstanceMethods

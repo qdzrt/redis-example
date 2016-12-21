@@ -9,6 +9,6 @@ class Article < ApplicationRecord
   end
 
   def current_date
-    Time.zone.now
+    Time.current
   end
 end
